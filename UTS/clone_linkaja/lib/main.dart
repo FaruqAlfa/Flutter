@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
+import 'navbar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,21 +17,24 @@ class MyApp extends StatelessWidget {
         body: ListView(
           children: [
             Container(
+              width: 100,
+              height: 80,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      'https://img.freepik.com/premium-vector/cityscape-white-background-building-perspective-modern-building-city-skyline-city-silhouette-business-center-vector-illustration-flat-design_51530-2883.jpg'),
+                      'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRGV834j6wqK7Iz6W8ZVlxi_eVIhj5BPWtdEwQGle7iDBPoafy6'),
                   fit: BoxFit.fill,
                 ),
               ),
-              margin: const EdgeInsets.fromLTRB(12, 12, 0, 0),
+              margin: const EdgeInsets.fromLTRB(0, 12, 0, 0),
               child: Row(
                 children: [
-                  Container(
-                    child: const Image(
-                      image: NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/LinkAja.svg/2048px-LinkAja.svg.png'),
-                      width: 70,
+                  Padding(
+                    padding: EdgeInsets.only(left: 16, right: 16), // Jarak kiri, kanan, dan atas 2 cm
+                    child: Image.network(
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/LinkAja.svg/2048px-LinkAja.svg.png",
+                      width: 50,
+                      height: 50,
                     ),
                   ),
                   Container(
@@ -61,7 +65,7 @@ class MyApp extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    margin: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+                    margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                     height: 110,
                     width: 500,
                     alignment: Alignment.topLeft,
@@ -231,6 +235,8 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
+
+            //list
             Container(
               padding: const EdgeInsets.all(1),
               child: Column(
@@ -238,118 +244,252 @@ class MyApp extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/wifi.png',
-                            height: 100,
-                            width: 100,
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/wifi.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'Pulsa/Data',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                  Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/bolt.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'Listrik',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/insurance.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'BPJS',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/gamepad.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'mgames',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                ],
+                              ),
+                              const SizedBox(
+                                  height: 1), // Spacer antara kolom pertama dan kedua
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/satellite.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'TV Kabel & \nInternet',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                  Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/drop.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'PDAM',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                  Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/credit-card.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'Kartu Uang \nElektronik',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                  Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 1),
+                                  child: Image.asset(
+                                    'assets/images/more.png',
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                ),
+                                const SizedBox(height: 1), // Spacer antara gambar dan teks
+                                Text(
+                                  'Semua',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                                ],
+                              ),
+                            ],
                           ),
-                          Text('Pulsa/Data'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/bolt.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('Listrik'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/insurance.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('BPJS'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/gamepad.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('mgames'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                      height: 1), // Spacer antara kolom pertama dan kedua
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/satellite.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('TV Kabel & \nInternet'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/drop.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('PDAM'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/credit-card.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('Kartu Uang \n Elektronik'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'assets/images/more.png',
-                            height: 100,
-                            width: 100,
-                          ),
-                          Text('Semua'),
-                          SizedBox(height: 1), // Spacer antara ikon dan teks
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                        ),
+            const Padding(
+              padding: EdgeInsets.only(top: 30),
             ),
-           
+            const MyCarouselSlider(),
+              const SizedBox(
+                height: 30,
+              ),
+              const Padding(padding: EdgeInsets.only(bottom: 40))
           ],
         ),
+      bottomNavigationBar: const Navbar(),
       ),
+    );
+  }
+}
+
+class MyCarouselSlider extends StatefulWidget {
+  const MyCarouselSlider({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _MyCarouselSliderState createState() => _MyCarouselSliderState();
+}
+
+class _MyCarouselSliderState extends State<MyCarouselSlider> {
+  int _current = 0;
+  final List<String> imgList = [
+    'assets/images/slider/gb1.jpg',
+    'assets/images/slider/gb2.jpg',
+    'assets/images/slider/gb3.jpg',
+    'assets/images/slider/gb4.jpg',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CarouselSlider(
+          items: imgList
+              .map((item) => Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.asset(
+                        item,
+                        fit: BoxFit.cover,
+                        width: 500,
+                        height: 300,
+                      ),
+                    ),
+                  ))
+              .toList(),
+          options: CarouselOptions(
+            autoPlay: true,
+            aspectRatio: 2.0,
+            enlargeCenterPage: true,
+            onPageChanged: (index, reason) {
+              setState(() {
+                _current = index;
+              });
+            },
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(
+            left: 20,
+            top: 10,
+            bottom: 40,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: imgList.asMap().entries.map((entry) {
+              final int index = entry.key;
+              return Container(
+                width: 8.0,
+                height: 8.0,
+                margin: const EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 5.0,
+                ),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _current == index
+                      ? const Color.fromARGB(228, 231, 43, 43)
+                      : const Color.fromRGBO(0, 0, 0, 0.3),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      ],
     );
   }
 }
