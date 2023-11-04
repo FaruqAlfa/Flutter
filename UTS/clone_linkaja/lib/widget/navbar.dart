@@ -1,3 +1,4 @@
+import 'history.dart';
 import 'package:flutter/material.dart';
 
 class Navbar extends StatefulWidget {
@@ -43,7 +44,8 @@ class _NavbarState extends State<Navbar> {
               if (index == 0) {
                 Navigator.of(context).pushNamed('/home');
               } else if (index == 1) {
-                Navigator.of(context).pushNamed('/history');
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryPage()));
+                // Tindakan yang>>>>>>> diambil saat tombol ditekan
               }
             },
             items: [
