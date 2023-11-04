@@ -51,8 +51,8 @@ class _NavbarState extends State<Navbar> {
               }
             },
             items: [
-              itemBar(Icons.home, "Home"),
-              itemBar(Icons.history, "History"),
+              itemBar(Icons.home, "Beranda"),
+              itemBar(Icons.history, "Riwayat"),
               BottomNavigationBarItem(
                 icon: SizedBox(
                   width: 28,
@@ -71,10 +71,10 @@ class _NavbarState extends State<Navbar> {
                     ),
                   ),
                 ),
-                label: "Pay",
+                label: "Bayar",
               ),
-              itemBar(Icons.inbox, "Inbox"),
-              itemBar(Icons.switch_account, "Account"),
+              itemBar(Icons.inbox, "Pesan"),
+              itemBar(Icons.switch_account, "Profil"),
             ],
           ),
         ],

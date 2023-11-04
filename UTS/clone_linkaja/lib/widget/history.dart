@@ -40,7 +40,7 @@ class HistoryPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/drop.png',
+                      'assets/images/History.jpg',
                       width: 190,
                       height: 190,
                     ),
