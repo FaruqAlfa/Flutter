@@ -1,3 +1,5 @@
+import 'package:clone_linkaja/widget/dashboard.dart';
+
 import 'history.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +44,7 @@ class _NavbarState extends State<Navbar> {
             unselectedItemColor: const Color.fromARGB(255, 0, 0, 0),
             onTap: (index) {
               if (index == 0) {
-                Navigator.of(context).pushNamed('/home');
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MyDashboard()));
               } else if (index == 1) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryPage()));
                 // Tindakan yang>>>>>>> diambil saat tombol ditekan
