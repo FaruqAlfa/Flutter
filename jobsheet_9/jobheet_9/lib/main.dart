@@ -1,4 +1,7 @@
+// main.dart
 import 'package:flutter/material.dart';
+import 'input.dart';
+import 'convert.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,18 +9,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Suhu Converter',
-      home: TemperatureConverter(),
+      home: TemperatureResult(),
     );
   }
 }
 
-class TemperatureConverter extends StatefulWidget {
+class TemperatureResult extends StatefulWidget {
   @override
-  _TemperatureConverterState createState() => _TemperatureConverterState();
+  _TemperatureResultState createState() => _TemperatureResultState();
 }
 
-class _TemperatureConverterState extends State<TemperatureConverter> {
+class _TemperatureResultState extends State<TemperatureResult> {
   TextEditingController _celsiusController = TextEditingController();
   double _kelvinResult = 0.0;
   double _reamurResult = 0.0;
@@ -28,6 +32,11 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
       setState(() {
         _kelvinResult = celsius + 273.15;
         _reamurResult = celsius * 4 / 5;
+      });
+    } else {
+      setState(() {
+        _kelvinResult = 0.0;
+        _reamurResult = 0.0;
       });
     }
   }
@@ -42,54 +51,12 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextField(
-                controller: _celsiusController,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                decoration: InputDecoration(
-                  labelText: 'Masukkan Suhu (Celsius)',
-                ),
-              ),
-              SizedBox(height: 20),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 200),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text('Suhu dalam Kelvin:', style: TextStyle(fontSize: 18)),
-                        Text('Suhu dalam Reamur:', style: TextStyle(fontSize: 18)),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('$_kelvinResult', style: TextStyle(fontSize: 40)),
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('$_reamurResult', style: TextStyle(fontSize: 40)),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
-              Container(
-                margin: EdgeInsets.only(top: 250),
-                child: ElevatedButton(
-                  onPressed: () {
-                    _convertTemperature();
-                  },
-                  child: Text('Konversi Suhu'),
-                ),
+              TemperatureInput(celsiusController: _celsiusController),
+              TemperatureConverter(
+                kelvinResult: _kelvinResult,
+                reamurResult: _reamurResult,
+                convertTemperature: _convertTemperature,
               ),
             ],
           ),
