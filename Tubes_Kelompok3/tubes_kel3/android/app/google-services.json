@@ -1,0 +1,29 @@
+{
+    "project_info": {
+      "project_number": "477314159745",
+      "project_id": "tubes_kel3-abd9a",
+      "storage_bucket": "tubes_kel3-abd9a.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:477314159745:android:ee1ee139cac9a4db2da980",
+          "android_client_info": {
+            "package_name": "com.example.tubes_kel3"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDLqPHKnnqSPN-N_X1Ydhla53WhalvEk6o"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
